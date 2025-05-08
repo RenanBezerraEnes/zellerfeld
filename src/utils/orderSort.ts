@@ -1,5 +1,5 @@
-import type { Order } from '../orders/types';
-import type { FilterColumn } from '../orders/types';
+import type { Order } from '@pages/Orders/types';
+import type { FilterColumn } from '@pages/Orders/types';
 
 export function getSortValue(order: Order, col: FilterColumn): string | number {
   switch (col) {

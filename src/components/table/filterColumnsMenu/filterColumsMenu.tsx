@@ -1,6 +1,6 @@
 import { Button } from '@heroui/react';
-import { getFilterButtonProps } from '../../../utils/buttonStyles';
 import type { FilterColumnMenuProps } from './types';
+import { getFilterButtonProps } from '@styles/buttonStyles';
 import { CheckIcon } from 'lucide-react';
 
 export const FilterColumnMenu = ({
@@ -11,8 +11,12 @@ export const FilterColumnMenu = ({
   onSelectAll,
   onClear,
 }: FilterColumnMenuProps) => {
+  const handleClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+  };
+
   return (
-    <>
+    <div onClick={handleClick} className="relative">
       <div className="flex-1 w-full max-h-32 overflow-y-auto flex flex-col gap-1 items-center">
         {options.map((option) => {
           const isSelected = filters[col].includes(option);
@@ -47,6 +51,6 @@ export const FilterColumnMenu = ({
           Clear
         </Button>
       </div>
-    </>
+    </div>
   );
 };

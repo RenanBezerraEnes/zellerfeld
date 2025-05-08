@@ -6,22 +6,22 @@ Following SOLID, DRY principles and best practices.
 
 The project follows a clean, modular architecture with clear separation of concerns:
 
-```
 src/
 ├── components/
-│   └── table/
-│       ├── filterColumnsMenu/    # Filter dropdown components
-│       └── ordersRow/           # Table row components
+│ └── table/
+│ ├── FilterColumnsMenu/ # Filter dropdown components
+│ └── OrdersRow/ # Table row components
 ├── orders/
-│   ├── index.tsx               # Main order component
-│   ├── types.ts               # TypeScript types and constants
-│   └── useOrders.ts           # Custom hook for business logic
+│ ├── index.tsx # Main order component
+│ ├── types.ts # TypeScript types and constants
+│ └── useOrders.ts # Custom hook for business logic
 ├── utils/
-│   ├── filterHelpers.ts       # Filter utility functions
-│   └── orderSort.ts           # Sorting utility functions
+│ ├── filterHelpers.ts # Filter utility functions
+│ └── orderSort.ts # Sorting utility functions
+├── styles/
+│ └── buttonStyles.ts # Shared button style
 └── DB/
-    └── db.data.ts            # Mock data
-```
+└── db.data.ts # Mock data
 
 ## 🎯 SOLID Principles Implementation
 
@@ -84,3 +84,12 @@ src/
    ```bash
    npm run build
    ```
+
+🖱️ Table Interaction Instructions
+Click the arrow to sort by each column header.
+
+Click the filter options under each header (th) to add a filter.
+
+Under OID, you can select all filters or clear all filters.
+
+Under the other headers, you can also select all filters from that column or clear all filters as well.

@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Order } from '../../../orders/types';
+import type { Order } from '@pages/Orders/types';
 
 interface OrderRowProps {
   order: Order;
@@ -7,7 +7,7 @@ interface OrderRowProps {
   onToggle: () => void;
 }
 
-export const OrderRow = React.memo(({ order, expanded, onToggle }: OrderRowProps) => {
+export const OrdersRow = React.memo(({ order, expanded, onToggle }: OrderRowProps) => {
   return (
     <>
       <tr
@@ -75,7 +75,7 @@ export const OrderRow = React.memo(({ order, expanded, onToggle }: OrderRowProps
           <td colSpan={8} className="px-4 py-2 bg-gray-50">
             <div className="p-4">
               I realised that there was an arrow to open it, however our data don't have nothing,
-              that's I leave this message here. I'm looking forward to talk to you!
+              that's why I leave this message here. I'm looking forward to talk to you!
             </div>
           </td>
         </tr>

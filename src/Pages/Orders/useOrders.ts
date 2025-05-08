@@ -7,8 +7,8 @@ import {
   initialFilters,
   DAYS_RANGE_VALUES,
 } from './types';
-import { matchesFilter, getAllFiltersSelected } from '../utils/filterHelpers';
-import { getSortValue, compareSortValues } from '../utils/orderSort';
+import { matchesFilter, getAllFiltersSelected } from '@utils/filterHelpers';
+import { getSortValue, compareSortValues } from '@utils/orderSort';
 
 function unique<T>(arr: T[]): T[] {
   return Array.from(new Set(arr));

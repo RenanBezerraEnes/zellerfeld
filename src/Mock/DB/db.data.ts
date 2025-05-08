@@ -1,4 +1,4 @@
-import type { Order } from '../orders/types';
+import type { Order } from '@pages/Orders/types';
 
 export const orders: Order[] = [
   {

@@ -1,10 +1,11 @@
-import { orders } from '../DB/db.data';
-import { Button } from '@heroui/react';
-import { OrderRow } from '../components/table/ordersRow';
-import { FILTER_CONSTANTS, SORT_DIRECTION } from './types';
-import { useOrders } from './useOrders';
 import { useMemo } from 'react';
-import { FilterColumnMenu } from '../components/table/filterColumnsMenu/filterColumsMenu';
+import { Button } from '@heroui/react';
+
+import { OrdersRow } from '@components/table/OrdersRow';
+import { FilterColumnMenu } from '@components/table/FilterColumnsMenu/FilterColumsMenu';
+import { useOrders } from './useOrders';
+import { orders } from 'Mock/DB/db.data';
+import { FILTER_CONSTANTS, SORT_DIRECTION } from './types';
 
 const COLUMNS = [
   { key: 'oid', label: 'Oid', width: 'w-12' },
@@ -139,7 +140,7 @@ export function OrdersDashboard() {
 
         <tbody>
           {sortedOrders.map((order) => (
-            <OrderRow
+            <OrdersRow
               key={order.oid}
               order={order}
               expanded={!!expandedRows[String(order.oid)]}

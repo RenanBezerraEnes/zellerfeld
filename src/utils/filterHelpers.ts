@@ -1,5 +1,5 @@
-import type { Filters, FilterColumn } from '../orders/types';
-import { FILTER_CONSTANTS } from '../orders/types';
+import type { Filters, FilterColumn } from '@pages/Orders/types';
+import { FILTER_CONSTANTS } from '@pages/Orders/types';
 
 export function matchesFilter<T extends string | number>(
   filter: T[] | string,

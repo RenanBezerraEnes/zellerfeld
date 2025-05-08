@@ -1,4 +1,4 @@
-import type { FilterColumn, Filters } from '../../../orders/types';
+import type { FilterColumn, Filters } from '../../../Pages/Orders/types';
 
 export interface FilterColumnMenuProps {
   col: Exclude<FilterColumn, 'oid'>;
