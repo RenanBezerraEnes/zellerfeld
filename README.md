@@ -45,11 +45,17 @@ src/
 
 ## 🛠️ Technologies
 
-- **React** - UI library
-- **TypeScript** - Type safety
-- **Tailwind CSS** - Utility-first CSS framework
-- **Hero UI** - Component library
-- **Vite** - Build tool
+- **React** – UI library
+- **TypeScript** – Type safety
+- **Tailwind CSS** – Utility-first CSS framework
+- **Hero UI** – Component library
+- **Lucide React** – Icon library
+- **Vite** – Fast build and dev server
+- **Jest** – Unit testing framework
+- **Testing Library** – React hooks/component testing (`@testing-library/react`)
+- **JSDOM** – Simulated DOM environment for tests
+- **ts-jest** – TypeScript support for Jest
+- **ESLint & Prettier** – Code quality and formatting
 
 ## 🎨 UI/UX Features
 
@@ -83,6 +89,20 @@ src/
 3. Build for production:
    ```bash
    npm run build
+   ```
+
+## Test
+
+1. Tests:
+
+   ```bash
+   npm run test
+   ```
+
+2. Run tests in watch mode:
+
+   ```bash
+   npm run test:watch
    ```
 
 🖱️ Table Interaction Instructions

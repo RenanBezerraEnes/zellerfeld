@@ -137,7 +137,6 @@ export function OrdersDashboard() {
             ))}
           </tr>
         </thead>
-
         <tbody>
           {sortedOrders.map((order) => (
             <OrdersRow

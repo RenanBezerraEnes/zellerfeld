@@ -68,13 +68,11 @@ export const initialFilters: Filters = {
 
 export interface UseOrderDashboardLogicResult {
   filters: Filters;
-  setFilters: React.Dispatch<React.SetStateAction<Filters>>;
+  setFilters: (filters: Filters) => void;
   filteredOrders: Order[];
   sortedOrders: Order[];
-  sortConfig: { column: FilterColumn; direction: SortDirection } | null;
-  setSortConfig: React.Dispatch<
-    React.SetStateAction<{ column: FilterColumn; direction: SortDirection } | null>
-  >;
+  sortConfig: { column: FilterColumn; direction: 'asc' | 'desc' } | null;
+  setSortConfig: (config: { column: FilterColumn; direction: 'asc' | 'desc' } | null) => void;
   handleSort: (column: FilterColumn) => void;
   resetAllFilters: () => void;
   selectAll: (column: Exclude<FilterColumn, 'oid'>) => void;
@@ -85,5 +83,5 @@ export interface UseOrderDashboardLogicResult {
   openFilters: Record<FilterColumn, boolean>;
   toggleRow: (oid: string | number) => void;
   expandedRows: Record<string, boolean>;
-  setExpandedRows: React.Dispatch<React.SetStateAction<Record<string, boolean>>>;
+  setExpandedRows: (rows: Record<string, boolean>) => void;
 }

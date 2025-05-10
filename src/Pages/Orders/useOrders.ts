@@ -91,6 +91,7 @@ export function useOrders(orders: Order[]): UseOrderDashboardLogicResult {
   const selectAll = (column: Exclude<FilterColumn, 'oid'>) => {
     setFilters((f) => ({ ...f, [column]: [...FILTER_OPTIONS[column]] }));
   };
+
   const clearColumn = (column: Exclude<FilterColumn, 'oid'>) => {
     setFilters((f) => ({ ...f, [column]: [] }));
   };
