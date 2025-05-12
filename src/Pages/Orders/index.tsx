@@ -1,11 +1,10 @@
 import { useMemo } from 'react';
-import { Button } from '@heroui/react';
-
 import { OrdersRow } from '@components/table/OrdersRow';
 import { FilterColumnMenu } from '@components/table/FilterColumnsMenu/FilterColumsMenu';
 import { useOrders } from './useOrders';
 import { orders } from 'Mock/DB/db.data';
 import { FILTER_CONSTANTS, SORT_DIRECTION } from './types';
+import { OidFilter } from '@components/table/OidColumnFilter/OidFilter';
 
 const COLUMNS = [
   { key: 'oid', label: 'Oid', width: 'w-12' },
@@ -88,41 +87,11 @@ export function OrdersDashboard() {
             {COLUMNS.map(({ key }) => (
               <td key={key} className="p-2 text-center align-top">
                 {key === 'oid' ? (
-                  <>
-                    <div className="flex flex-col justify-between h-[120px]">
-                      <Button
-                        key="oid-all"
-                        size="sm"
-                        variant={filters.oid === FILTER_CONSTANTS.ALL ? 'solid' : 'light'}
-                        color={filters.oid === FILTER_CONSTANTS.ALL ? 'primary' : 'default'}
-                        className={`w-full mb-1 transition-colors duration-100 flex justify-between items-center cursor-pointer ${
-                          filters.oid === FILTER_CONSTANTS.ALL
-                            ? 'bg-gray-300 text-black font-bold border border-gray-400'
-                            : 'bg-white hover:bg-gray-200 text-black'
-                        }`}
-                        onPress={() =>
-                          handleOptionClick(
-                            'oid',
-                            filters.oid === FILTER_CONSTANTS.ALL ? '' : FILTER_CONSTANTS.ALL,
-                          )
-                        }
-                      >
-                        <span className={filters.oid === FILTER_CONSTANTS.ALL ? 'font-bold' : ''}>
-                          All
-                        </span>
-                      </Button>
-                    </div>
-                    <div className="w-full flex flex-row justify-between gap-2 border-t border-gray-200 pt-2">
-                      <Button
-                        size="sm"
-                        variant="light"
-                        onPress={resetAllFilters}
-                        className="text-xs w-full cursor-pointer"
-                      >
-                        Clear Selection
-                      </Button>
-                    </div>
-                  </>
+                  <OidFilter
+                    filters={filters}
+                    onOptionClick={handleOptionClick}
+                    onResetAllFilters={resetAllFilters}
+                  />
                 ) : (
                   <FilterColumnMenu
                     col={key as Exclude<ColumnKey, 'oid'>}
